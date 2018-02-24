@@ -1,6 +1,6 @@
-#This is the github repo for the R Uni of Manchester & MMU  lead Bexit Data Challenge Hackathon
+# This is the github repo for the R Uni of Manchester & MMU  lead Bexit Data Challenge Hackathon
 
-##Info:
+## Info:
 
 **Date:** 2pm 1st March 
 
@@ -9,7 +9,7 @@
 **Topic:** Brexit Data Challenge.
 
 
-##Preparation:
+## Preparation:
 
 
 1. Read the material in preparation here: https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
