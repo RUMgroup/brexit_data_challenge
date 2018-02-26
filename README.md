@@ -1,4 +1,4 @@
-# This is the github repo for the R Uni of Manchester & MMU  lead Bexit Data Challenge Hackathon
+# This is the github repo for the R Uni of Manchester & MMU  lead Brexit Data Challenge Hackathon
 
 ## Info:
 
