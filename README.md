@@ -17,6 +17,10 @@
 
 We now have the data online as well! Please contact Reka, Heather, or Christian for a link and password!
 
+##Writing
+
+The link to the google doc: [https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing](https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing)
+
 
 ## Code of conduct
 
