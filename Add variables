@@ -1,0 +1,3 @@
+three<-read.csv("draft_ethnicity_brexit_03.csv")
+five<-read.csv("draft_ethnicity_brexit_05.csv")
+ten<-read.csv("draft_ethnicity_brexit_10.csv")
