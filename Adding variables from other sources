@@ -13,3 +13,6 @@ names(age)[1]<-"LAD16CD"
 
 all<-merge(pop,age,all=TRUE)
 all<-merge(all,rural,by.x="LAD16CD",by.y="LSOAD11CD",all.x=TRUE)
+summary(all)
+
+write.csv(all,file="extra_variables.csv")
