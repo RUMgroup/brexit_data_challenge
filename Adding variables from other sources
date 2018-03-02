@@ -1,1 +1,15 @@
 
+three<-read.csv("draft_ethnicity_brexit_03.csv")
+five<-read.csv("draft_ethnicity_brexit_05.csv")
+ten<-three<-read.csv("draft_ethnicity_brexit_03.csv")
+five<-read.csv("draft_ethnicity_brexit_05.csv")
+pop<-read.csv("PopDensity2016.csv")
+rur<-read.csv("RuralLookup.csv") #THIS SEEMS INCOMPLETE SO NEEDS REPLACING
+age<-read.csv("2016byAge.csv")
+
+#Rename so there is a consistently names column to join by
+names(pop)[1]<-"LAD16CD"
+names(age)[1]<-"LAD16CD"
+
+all<-merge(pop,age,all=TRUE)
+all<-merge(all,rural,by.x="LAD16CD",by.y="LSOAD11CD",all.x=TRUE)
