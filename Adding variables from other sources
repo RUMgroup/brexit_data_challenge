@@ -7,7 +7,7 @@ five<-read.csv("draft_ethnicity_brexit_05.csv")
 load("age_mig.rdata")
 nonUK<-read.csv("nonUKborn.csv")
 pop<-read.csv("PopDensity2016.csv")
-rur<-read.csv("RuralLookup.csv") #THIS SEEMS INCOMPLETE SO NEEDS REPLACING
+rural<-read.csv("RuralLookup.csv") #THIS SEEMS INCOMPLETE SO NEEDS REPLACING
 age_mig<-read.csv("2016byAge.csv")
 
 #Rename so there is a consistently names column to join by
