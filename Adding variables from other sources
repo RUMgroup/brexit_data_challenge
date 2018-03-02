@@ -1,9 +1,4 @@
 
-three<-read.csv("draft_ethnicity_brexit_03.csv")
-five<-read.csv("draft_ethnicity_brexit_05.csv")
-ten<-three<-read.csv("draft_ethnicity_brexit_03.csv")
-five<-read.csv("draft_ethnicity_brexit_05.csv")
-
 load("age_mig.rdata") #For info on fields see in the Dropbox
 nonUK<-read.csv("nonUKborn.csv") #For info on fields see in the Dropbox
 pop<-read.csv("PopDensity2016.csv")
@@ -14,13 +9,12 @@ age_mig<-read.csv("2016byAge.csv")
 
 #Rename so there is a consistently named column to join by
 names(pop)[1]<-"LAD16CD"
-names(age)[1]<-"LAD16CD"
 names(largefile)[1]<-"LAD16CD"
 
 all<-merge(age_mig,nonUK,all=TRUE)
 all<-merge(all,pop,all=TRUE)
 pop,age,all=TRUE)
-all<-merge(all,largefile,all=TRUE)
+all<-merge(all,largefile,all.x=TRUE)
 summary(all)
 
 write.csv(all,file="Covariates.csv")
