@@ -5,16 +5,15 @@ pop<-read.csv("PopDensity2016.csv")
 largefile<-read.csv("lsoa-atlas-data-clean-interesting-columns.csv") 
 l_aggregate <- aggregate(. ~ LSOA, largefile, mean)
 
-age_mig<-read.csv("2016byAge.csv")
 
 #Rename so there is a consistently named column to join by
+names(all)[1]<-"LAD16CD"
 names(pop)[1]<-"LAD16CD"
+names(age_mig)[1]<-"LAD16CD"
 names(largefile)[1]<-"LAD16CD"
-
-all<-merge(age_mig,nonUK,all=TRUE)
 all<-merge(all,pop,all=TRUE)
-pop,age,all=TRUE)
-all<-merge(all,largefile,all.x=TRUE)
+all<-merge(all,age_mig,all=TRUE)
+all<-merge(all,l_aggregate,all.x=TRUE)
 summary(all)
 
-write.csv(all,file="Covariates.csv")
+save(all,file="Covariates.rda")
