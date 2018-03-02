@@ -21,3 +21,5 @@ all<-merge(all,rural,by.x="LAD16CD",by.y="LSOAD11CD",all.x=TRUE)
 summary(all)
 
 write.csv(all,file="Covariates.csv")
+
+length(unique(rural$LSOA11CD[!rural$LSOA11CD %in% all$LAD16CD]))
