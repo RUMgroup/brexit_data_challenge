@@ -1,8 +1,10 @@
 
 load("age_mig.rdata") #For info on fields see in the Dropbox
 nonUK<-read.csv("nonUKborn.csv") #For info on fields see in the Dropbox
+
 pop<-read.csv("PopDensity2016.csv")
 largefile<-read.csv("lsoa-atlas-data-clean-interesting-columns.csv") 
+largefile<-merge(largefile,pop,by.x=,by.y="LSOA",all.x=TRUE)
 l_aggregate <- aggregate(. ~ LSOA, largefile, mean)
 names(l_aggregate)[1]<-"LAD16CD"
 
@@ -11,7 +13,6 @@ names(all)[1]<-"LAD16CD"
 names(pop)[1]<-"LAD16CD"
 names(age_mig)[1]<-"LAD16CD"
 
-all<-merge(all,pop,all=TRUE)
 all<-merge(all,age_mig,all=TRUE)
 all<-merge(all,l_aggregate,all.x=TRUE)
 summary(all)
