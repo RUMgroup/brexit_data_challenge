@@ -1,5 +1,9 @@
+library(tidyverse)
+library(cowplot)
+
 #Read ethnicity data frame
 ethnicity_data <- read.csv("data/ethnicity-full-nested.csv")
+ethnicity_data <- read.csv(file.choose())
 
 #mean by local authority 
 ethnicity_data_aggregate <- aggregate(. ~ LAD16CD + ethnic, ethnicity_data, mean)
@@ -15,6 +19,8 @@ wb_data_aggregate$year <- as.numeric(substring(wb_data_aggregate$key, 2))
 
 #read brexit data
 brexit_data <- read.csv("data/eu-referendum-result-data.csv")
+
+brexit_data <- read.csv(file.choose())
 brexit_data_clean <- brexit_data[,c(-1,-2,-3,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,-16,-17,-18)]
 brexit_data_clean$LAD16CD <- brexit_data_clean$Area_Code
 
@@ -22,8 +28,14 @@ brexit_data_clean$LAD16CD <- brexit_data_clean$Area_Code
 wb_ethnicity_brexit <- merge(wb_data_aggregate, brexit_data_clean, by=c("LAD16CD"))
 
 #plot
-ggplot(data = wb_ethnicity_brexit, aes(x=year, y=value, group = LAD16CD)) + geom_line(aes(color = Pct_Leave)) +
+ggplotly(ggplot(data = wb_ethnicity_brexit, aes(x=year, y=value, group = LAD16CD)) + geom_line(aes(color = Pct_Leave)) +
   theme_cowplot() +
   scale_colour_gradientn(colours = terrain.colors(10)) +
   ylab("Proportion of LA white British") +
-  xlab("Year")
+  xlab("Year"))
+
+ggplot(data = wb_ethnicity_brexit, aes(x=year, y=value, group = LAD16CD)) + geom_line(aes(color = Pct_Leave)) +
+  theme_cowplot() +
+  scale_colour_gradientn(colours = terrain.colors(10)) +
+  labs(x = "Year" , y = "Proportion of LA white British", colour = "Percent \nvoting leave")
+
