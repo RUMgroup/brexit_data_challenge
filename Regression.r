@@ -16,8 +16,22 @@ RegModel.1 <-
  #STEPWISE SIMPLIFICATION
 drop1(RegModel.1, test="F")
 
-#At the 3 year level, proposed dropped variables are Age group 45-54 and 5 year change (not 10 year change)
+#At the 3 year level, drop1 proposed dropped variables are Age group 45-54 and 5 year change (not 10 year change)
 
- #EXPAND ETHNICITY
+RegModel.2<-update(RegModel.1,~.-age_grp45_54)
+anova(RegModel.1,RegModel.2,test="Chi") #P=0.799
+anova(RegModel.2) #Mid 2016 population seems non significant
+
+RegModel.3<-update(RegModel.2,~.-Mid.2016.Population)
+anova(RegModel.2,RegModel.3,test="Chi") #P=0.0001324
+
+RegModel.4<-update(RegModel.2,~.-change05)
+anova(RegModel.2,RegModel.4,test="Chi") #P=0.2187
+summary(RegModel.4)
+
+#Significant: rate_nonUk, all age bands, Area.sq.km, change10, 
+#Mid2016 Population, Pct_Turnout.x, change10,Mid.2016.Population,Pct_Turnout.x,Rejected_Ballots,People.per.Sq.Km
+
+#EXPAND ETHNICITY (REPLACE rate_nonUk with ethnicity specific rates)
   
-RegModel.2<-
+RegModel.5<-
