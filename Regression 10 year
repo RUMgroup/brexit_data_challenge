@@ -1,0 +1,57 @@
+#NARROW DOWN COVRIATES TO INCLUDE IN FINAL MODEL
+
+load("Covariates.rda")
+all<-all[,c(1,3:12)]
+a<-read.csv("draft_ethnicity_brexit_10.csv")
+test10<-merge(a,all,all.x=TRUE)
+attach(test10)
+
+#WHEN WE DECIDE WHICH VARIABLES TO INCLUDE WE WILL UPDATE THE MODEL CODE
+RegModel.1 <- 
+  lm(Pct_Leave.x~rate_nonUk+age_grp18_24+age_grp25_34+age_grp35_44+age_grp45_54+age_grp55_64+
+  age_grp65_over+Area.Sq.Km+ Mid.2016.Population+Pct_Turnout.x+Rejected_Ballots+
+  People.per.Sq.Km,  data=test10)
+   
+ #STEPWISE SIMPLIFICATION
+drop1(RegModel.1, test="F")
+
+#At the 10 year level, drop1 proposed dropped variables are Age group 45-54 
+
+RegModel.2<-update(RegModel.1,~.-age_grp45_54)
+anova(RegModel.1,RegModel.2,test="Chi") #P=0.8306
+
+drop1(RegModel.2, test="F")
+
+#EXPAND ETHNICITY (REPLACE rate_nonUk with ethnicity specific rates)
+ 
+load("Brexit10Covariates.rda")
+RegModel.5<-lm(formula = Pct_Leave.y ~ age_grp18_24 + age_grp25_34 + age_grp35_44 + 
+    age_grp55_64 + age_grp65_over + Area.Sq.Km + 
+    Asian + Black + Mid.2016.Population + Other + Pct_Turnout.y + People.per.Sq.Km + 
+    Rejected_Ballots + 
+    White.British + White.Other, data = tenall)
+
+drop1(RegModel.5, test="F")
+
+RegModel.6<-update(RegModel.5,~.-Asian)
+anova(RegModel.5,RegModel.6,test="Chi") #P=0.9302
+
+RegModel.7<-update(RegModel.6,~.-Other)#P=0.8236
+
+RegModel.8<-update(RegModel.7,~.-Mid.2016.Population)
+anova(RegModel.7,RegModel.8,test="Chi") #P=0.3462
+
+drop1(RegModel.8, test="F")
+
+RegModel.9<-update(RegModel.8,~.-age_grp55_64)
+anova(RegModel.8,RegModel.9,test="Chi") #P=0.1351
+
+RegModel.10<-update(RegModel.9,~.-age_grp25_34)
+anova(RegModel.9,RegModel.10,test="Chi") #P=0.2261
+
+RegModel.11<-update(RegModel.10,~.-Mid.2016.Population)
+anova(RegModel.10,RegModel.11,test="Chi") #P=0.2063 
+
+drop1(RegModel.11, test="F")
+
+summary(RegModel.11)
