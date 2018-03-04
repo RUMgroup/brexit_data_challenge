@@ -27,6 +27,7 @@ yearlabels = ['y{}'.format(x) for x in range(1998, 2018)]
 
 # Make the pivot table
 pivoted = pd.pivot_table(data[['AreaName', 'ethnic2'] + yearlabels], columns=['ethnic2'], index = ['AreaName'])
+idx = pd.IndexSlice
 
 # Data for joining on: Remove all the ethnicity stuff and drop rate_nonUK because it's got NAs in it.
 metadata = data.drop(["ethnic2", "ethnicrate", "rate_nonUk"] + yearlabels,1).drop_duplicates().set_index('AreaName')
@@ -42,7 +43,6 @@ ethnicities = [x for x in pivoted.columns.levels[1]]
 
 
 # How to index pivot table
-idx = pd.IndexSlice
 ## First idx is one of the pivot table indexes (pivoted.index.levels), second one is one of the ethnicity columns
 pivoted.loc[:, idx['y1998':'y2003', 'Asian':'Other']]
 
