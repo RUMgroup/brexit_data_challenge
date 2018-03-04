@@ -57,8 +57,15 @@ anova(RegModel.7,RegModel.8,test="Chi") #P=0.2106
 RegModel.9<-update(RegModel.8,~.-age_grp25_34)
 anova(RegModel.8,RegModel.9,test="Chi") #P=0.215
 
+drop1(RegModel.9, test="F")
 
+RegModel.10<-update(RegModel.9,~.-Black)
+anova(RegModel.9,RegModel.10,test="Chi") #P=0.215
 
+RegModel.11<-update(RegModel.10,~.-White.Other)
+anova(RegModel.10,RegModel.11,test="Chi") #P=0.0315 #Cannot be dropped
+
+summary(RegModel.11)
 
 
 
