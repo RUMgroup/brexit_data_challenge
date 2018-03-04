@@ -2,12 +2,7 @@
 
 ## Info:
 
-**Date:** 2pm 1st March 
-
-**Venue:** Vaughan House, University of Manchester
-
-**Topic:** Brexit Data Challenge.
-
+This repository contains codes used in the analysis for the R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge.
 
 ## Preparation:
 
