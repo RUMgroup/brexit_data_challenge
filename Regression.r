@@ -52,7 +52,13 @@ anova(RegModel.6,RegModel.7,test="Chi") #P=0.659
 drop1(RegModel.7, test="F")
 
 RegModel.8<-update(RegModel.7,~.-Asian)
-anova(RegModel.7,RegModel.8,test="Chi") #P=0.659
+anova(RegModel.7,RegModel.8,test="Chi") #P=0.2106
+
+RegModel.9<-update(RegModel.8,~.-age_grp25_34)
+anova(RegModel.8,RegModel.9,test="Chi") #P=0.215
+
+
+
 
 
 
