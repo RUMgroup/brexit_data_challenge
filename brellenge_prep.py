@@ -78,13 +78,47 @@ stacked_bar_chart() # I'm not sure why the bar chart does not remain constant
 # import IPython
 # IPython.embed()
 
-# Regression example
+### Regressions ###
 
 import statsmodels.formula.api as smf
-df=change_since(2005).join(metadata)
 
-# R2 = 0.45
-# The Q is to handle whitespace in column names.
-smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + Region', data=df).fit().summary()
-# R2 = 0.45
-smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR', data=df).fit().summary()
+# Example interactive exploration
+
+# df=change_since(2005).join(metadata)
+# # R2 = 0.45
+# # The Q is to handle whitespace in column names.
+# smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + Region', data=df).fit().summary()
+# # R2 = 0.45
+# smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR', data=df).fit().summary()
+
+# Better exploration:
+
+def explore(metadata, formula):
+    "Explore all possible change_sinces"
+    results = []
+    for since in range(1998, 2018):
+        for till in range(1998, 2018):
+            try:
+                ols = smf.ols(formula, data=change_since(since, till).join(metadata))
+                results.append((since, till, ols, ols.fit(), ols.fit().rsquared_adj))
+            except:
+                # Model failed to converge
+                pass
+
+    results.sort(key = lambda row: row[4])
+    return results
+
+def exploreEngland():
+    justEngland = metadata.dropna()
+    formula = 'Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR + IMD'
+    return explore(justEngland, formula)
+
+def exploreUK():
+    return explore(metadata,  'Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR')
+
+# If you feel like searching again, try:
+# bestUK = exploreUK()[-1]
+
+# Going backwards turns out to be best, probably because it's capturing the relative population near 2015 better?
+bestEng = smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR + IMD', data=change_since(2016, 2001).join(metadata))
+bestUK = smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR', data=change_since(2017, 2003).join(metadata))
