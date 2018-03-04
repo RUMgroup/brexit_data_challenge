@@ -39,6 +39,13 @@ metadata['y2015_WBR'] = pivoted.loc[:, idx['y2015', 'White British']]
 # List of ethnicities for for loops.
 ethnicities = [x for x in pivoted.columns.levels[1]]
 
+# Get English IMDs
+imd = pd.read_csv("data/File_2_ID_2015_Domains_of_deprivation.csv")
+ladimd=imd.groupby('Local Authority District code (2013)').median()
+# IMD data has NAs for all of Scotland :(
+metadata = metadata.join(ladimd, on='LAD16CD')
+metadata=metadata.rename(columns={"Index of Multiple Deprivation (IMD) Decile (where 1 is most deprived 10% of LSOAs)":"IMD"})
+
 ### Analysis ###
 
 
