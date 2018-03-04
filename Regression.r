@@ -66,8 +66,11 @@ RegModel.11<-update(RegModel.10,~.-White.Other)
 anova(RegModel.10,RegModel.11,test="Chi") #P=0.0315 #Cannot be dropped
 
 summary(RegModel.11)
+RegModel.12<-update(RegModel.11,~.-Mid.2016.Population)
+anova(RegModel.11,RegModel.12,test="Chi") #P=0.0315 #Cannot be dropped
 
-
+drop1(RegModel.12, test="F")
+summary(RegModel.12)
 
 
 
