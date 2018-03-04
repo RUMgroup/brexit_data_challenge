@@ -106,6 +106,10 @@ def explore(metadata, formula):
                 pass
 
     results.sort(key = lambda row: row[4])
+
+    # Actually pandas is pretty nice
+    results = pd.DataFrame.from_records(results)
+    results.columns = ['since', 'till', 'ols', 'ols.fit', 'rsq']
     return results
 
 def exploreEngland():
@@ -114,11 +118,15 @@ def exploreEngland():
     return explore(justEngland, formula)
 
 def exploreUK():
-    return explore(metadata,  'Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR')
+    return explore(metadata, 'Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR')
 
 # If you feel like searching again, try:
 # bestUK = exploreUK()[-1]
 
-# Going backwards turns out to be best, probably because it's capturing the relative population near 2015 better?
+# Going backwards turns out to be best, probably because it's capturing the relative population near referendum better?
 bestEng = smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR + IMD', data=change_since(2016, 2001).join(metadata))
 bestUK = smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR', data=change_since(2017, 2003).join(metadata))
+
+# Heatmap
+# res = exploreUK()
+# seaborn.heatmap(res.drop(columns=['ols', 'ols.fit']).pivot('since', 'till', 'rsq'))
