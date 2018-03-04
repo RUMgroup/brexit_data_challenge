@@ -42,3 +42,19 @@ RegModel.5<-lm(formula = Pct_Leave.y ~ age_grp18_24 + age_grp25_34 + age_grp35_4
     White.British + White.Other, data = threeall)
 
 drop1(RegModel.5, test="F")
+
+RegModel.6<-update(RegModel.5,~.-age_grp45_54)
+anova(RegModel.5,RegModel.6,test="Chi") #P=0.7564
+
+RegModel.7<-update(RegModel.6,~.-Other)
+anova(RegModel.6,RegModel.7,test="Chi") #P=0.659
+
+drop1(RegModel.7, test="F")
+
+RegModel.8<-update(RegModel.7,~.-Asian)
+anova(RegModel.7,RegModel.8,test="Chi") #P=0.659
+
+
+
+
+
