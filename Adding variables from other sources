@@ -20,7 +20,8 @@ names(p_aggregate)[1]<-"LAD16CD"
 names(l_aggregate)[1]<-"LAD16CD"
 all<-merge(age_mig,p_aggregate,all=TRUE)
 all<-merge(all,l_aggregate,all.x=TRUE)
-summary(all)
+summary(all
+all<-all[,c(1:12)]
 
 save(all,file="Covariates.rda")
 
@@ -30,4 +31,7 @@ FUN=mean, na.rm=TRUE)
 head(aggfive)
 aggfive<-aggfive[,c(1,4:17,19:20,26:34)]
 head(aggfive)
+names(aggfive)[1]<-"LAD16CD"
+
 write.csv(aggfive,file="Brexit_combined_05.csv")
+
