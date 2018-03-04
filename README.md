@@ -2,24 +2,14 @@
 
 ## Info:
 
-This repository contains codes used in the analysis for the R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge.
+This repository contains codes used in the analysis for the R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge introduced here: https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
 
-## Preparation:
-
-
-1. Read the material in preparation here: https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
-2. Propose ideas for papers by raising issues on this github repository (info on how to do this here: [https://help.github.com/articles/creating-an-issue/](https://help.github.com/articles/creating-an-issue/))
-
-We now have the data online as well! Please contact Reka, Heather, or Christian for a link and password!
-
-##Writing
-
-The link to the google doc: [https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing](https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing)
+The link to the google doc for our submission is here: [https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing](https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing)
 
 
 ## Code of conduct
 
-Please adhere to the R Consortium and R Community Code of conduct
+Our organisations adhere to the R Consortium and R Community Code of conduct
 
 ### R Community Code of Conduct
 A member of the R Community is:
