@@ -33,5 +33,12 @@ summary(RegModel.4)
 #Mid2016 Population, Pct_Turnout.x, change10,Mid.2016.Population,Pct_Turnout.x,Rejected_Ballots,People.per.Sq.Km
 
 #EXPAND ETHNICITY (REPLACE rate_nonUk with ethnicity specific rates)
-  
-RegModel.5<-
+ 
+load("Brexit03Covariates.rda")
+RegModel.5<-lm(formula = Pct_Leave.y ~ age_grp18_24 + age_grp25_34 + age_grp35_44 + 
+    age_grp45_54 + age_grp55_64 + age_grp65_over + Area.Sq.Km + 
+    Asian + Black + Mid.2016.Population + Other + Pct_Turnout.y + People.per.Sq.Km + 
+    Rejected_Ballots + 
+    White.British + White.Other, data = threeall)
+
+drop1(RegModel.5, test="F")
