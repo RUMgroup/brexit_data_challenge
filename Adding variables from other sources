@@ -30,4 +30,4 @@ FUN=mean, na.rm=TRUE)
 head(aggfive)
 aggfive<-aggfive[,c(1,4:17,19:20,26:34)]
 head(aggfive)
-save(aggfive,file="Brexit_combined_05.rda")
+write.csv(aggfive,file="Brexit_combined_05.csv")
