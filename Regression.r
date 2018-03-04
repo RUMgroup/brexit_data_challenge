@@ -15,6 +15,9 @@ RegModel.1 <-
    
  #STEPWISE SIMPLIFICATION
 drop1(RegModel.1, test="F")
-RegModel.2<-
+
+#At the 3 year level, proposed dropped variables are Age group 45-54 and 5 year change (not 10 year change)
+
  #EXPAND ETHNICITY
   
+RegModel.2<-
