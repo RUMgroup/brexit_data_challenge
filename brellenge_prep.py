@@ -120,6 +120,37 @@ def exploreEngland():
 def exploreUK():
     return explore(metadata, 'Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR')
 
+def multiHeatmap(namedResults):
+    "(formula/name, results) -> figure of lots of heatmaps"
+
+    # This is a lot of boring work. You'd have thought someone else would have
+    # done it :(
+
+    # Make grid
+    rows = max(1, len(namedResults)//3)
+    cols = min(3, len(namedResults))
+    fig, axs = plt.subplots(rows, cols)
+    # Share colour bar.
+    cbar_ax = fig.add_axes([.91, .3, .03, .4])
+
+    # Find limits
+    vmin = min((df.rsq.min() for _, df in namedResults))
+    vmax = max((df.rsq.max() for _, df in namedResults))
+
+    # Create plots
+    for ax, (name, results) in zip(axs, namedResults):
+        seaborn.heatmap(
+                results.pivot('since', 'till', 'rsq'),
+                cmap='YlGnBu',
+                vmin=vmin, vmax=vmax,
+                square=True,
+                ax=ax,
+                cbar=ax == axs[0],
+                cbar_ax=cbar_ax)
+        ax.set_title(name)
+
+    return (fig, axs)
+
 # If you feel like searching again, try:
 # bestUK = exploreUK()[-1]
 
@@ -127,6 +158,8 @@ def exploreUK():
 bestEng = smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR + IMD', data=change_since(2016, 2001).join(metadata))
 bestUK = smf.ols('Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR', data=change_since(2017, 2003).join(metadata))
 
-# Heatmap
+# Heatmaps
 # res = exploreUK()
-# seaborn.heatmap(res.drop(columns=['ols', 'ols.fit']).pivot('since', 'till', 'rsq'))
+# seaborn.heatmap(res.pivot('since', 'till', 'rsq'))
+# multi = (('UK', exploreUK()), ('England', exploreEngland()))
+# multiHeatmap(multi)
