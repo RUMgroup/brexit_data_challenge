@@ -120,7 +120,7 @@ def exploreEngland():
 def exploreUK():
     return explore(metadata, 'Pct_Remain ~ Q("White British") + Q("White Other") + Asian + Black + Other + y2015_WBR')
 
-def multiHeatmap(namedResults):
+def multiHeatmap(namedResults, xCol='till', yCol='since', valueCol='rsq'):
     "(formula/name, results) -> figure of lots of heatmaps"
 
     # This is a lot of boring work. You'd have thought someone else would have
@@ -129,18 +129,19 @@ def multiHeatmap(namedResults):
     # Make grid
     rows = max(1, len(namedResults)//3)
     cols = min(3, len(namedResults))
-    fig, axs = plt.subplots(rows, cols)
+    fig, axs = plt.subplots(rows, cols, squeeze=False)
+    axs = axs.flatten()
     # Share colour bar.
     cbar_ax = fig.add_axes([.91, .3, .03, .4])
 
     # Find limits
-    vmin = min((df.rsq.min() for _, df in namedResults))
-    vmax = max((df.rsq.max() for _, df in namedResults))
+    vmin = min((df[valueCol].min() for _, df in namedResults))
+    vmax = max((df[valueCol].max() for _, df in namedResults))
 
     # Create plots
     for ax, (name, results) in zip(axs, namedResults):
         seaborn.heatmap(
-                results.pivot('since', 'till', 'rsq'),
+                results.pivot(yCol, xCol, valueCol),
                 cmap='YlGnBu',
                 vmin=vmin, vmax=vmax,
                 square=True,
