@@ -33,5 +33,14 @@ aggfive<-aggfive[,c(1,4:17,19:20,26:34)]
 head(aggfive)
 names(aggfive)[1]<-"LAD16CD"
 
-write.csv(aggfive,file="Brexit_combined_05.csv")
 
+#Assessing correlation between surname estimated immigration and ONS estimated immigration
+write.csv(aggfive,file="Brexit_combined_05.csv")
+load("Brexit_combined_05.rda")
+non<-read.csv("nonUKborn.csv")
+names(aggfive)[1]<-"AreaCode"
+aggfive<-merge(aggfive,non,all.x=TRUE)
+
+aggfive$actual_imm<-aggfive$nonUK2005/aggfive$resPop2005
+cor.test(aggfive$actual_imm, aggfive$nonUK2005, alternative = c("two.sided", "less", "greater"), method = c("pearson", "kendall", "spearman"),
+         exact = NULL, conf.level = 0.95, continuity = FALSE, ...)
