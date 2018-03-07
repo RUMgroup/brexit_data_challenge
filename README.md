@@ -6,6 +6,8 @@ This repository contains codes used in the analysis for the R Uni of Manchester 
 
 The link to the google doc for our submission is here: [https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing](https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing)
 
+Please add anything you would like to put into our group submission to the data challenge into the google doc or add as an issue by the morning of 08/03/2018, when we will be making final edits. Thank you all for your dedication and your fantastic outputs!
+
 
 ## Code of conduct
 
