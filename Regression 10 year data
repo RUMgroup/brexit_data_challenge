@@ -25,6 +25,10 @@ drop1(RegModel.2, test="F")
 #EXPAND ETHNICITY (REPLACE rate_nonUk with ethnicity specific rates)
  
 load("Brexit10Covariates.rda")
+# Optional to judge effect sizes
+#tenall<-scale(tenall[,c(2:26,28:36)])
+#tenall<-as.data.frame(tenall)
+attach(tenall)
 RegModel.5<-lm(formula = Pct_Leave.y ~ age_grp18_24 + age_grp25_34 + age_grp35_44 + 
     age_grp55_64 + age_grp65_over + Area.Sq.Km + 
     Asian + Black + Mid.2016.Population + Other + Pct_Turnout.y + People.per.Sq.Km + 
