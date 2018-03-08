@@ -3,8 +3,9 @@
 load("Covariates.rda")
 all<-all[,c(1,3:12)]
 a<-read.csv("draft_ethnicity_brexit_05.csv")
-test3<-merge(a,all,all.x=TRUE)
-attach(test3)
+test5<-merge(a,all,all.x=TRUE)
+
+attach(test5)
 
 RegModel.1 <- 
   lm(Pct_Leave.x~rate_nonUk+age_grp18_24+age_grp25_34+age_grp35_44+age_grp45_54+age_grp55_64+
