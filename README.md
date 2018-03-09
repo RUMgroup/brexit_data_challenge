@@ -3,11 +3,10 @@
 ## Info:
 
 This repository contains codes used in the analysis for the R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge introduced here: https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
-Subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk are also housed here for your convenience; please acknowledge all data providers if completing further analysis.
+Subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk are also housed here for your convenience; please acknowledge all data providers if accessing these file for further analysis.
 
-The link to the google doc for our submission is here: [https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing](https://docs.google.com/document/d/1fiMiPO57pSaeYS3UxOxGpYX4etMGiGaSMpHnZlVDsOU/edit?usp=sharing)
-
-Please add anything you would like to put into our group submission to the data challenge into the google doc or add as an issue by the morning of 08/03/2018, when we will be making final edits. Thank you all for your dedication and your fantastic outputs!
+You can view our submission here: https://github.com/RUMgroup/brexit_data_challenge/blob/master/RUM%20Brexit%20Submission%20Doc%2008032018.pdf
+Thank you all for your dedication and your fantastic outputs!
 
 
 ## Code of conduct
