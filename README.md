@@ -6,7 +6,7 @@ This repository contains codes used in the analysis for the R Uni of Manchester 
 Subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk which were linked to the CDRC data are housed here for your convenience; please acknowledge these data providers if accessing these file for further analysis.
 
 View our submission here: https://github.com/RUMgroup/brexit_data_challenge/blob/master/RUM%20Brexit%20Submission%20Doc%2008032018.pdf
-Thank you all for your dedication and your fantastic outputs!
+Thank you to all participants for your dedication and your fantastic outputs!
 
 
 ## Code of conduct
