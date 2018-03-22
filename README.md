@@ -21,6 +21,9 @@ Please acknowledge these data providers if accessing these files for further ana
 View our submission here: https://github.com/RUMgroup/brexit_data_challenge/blob/master/RUM%20Brexit%20Submission%20Doc%2008032018.pdf
 Thank you to all participants for your dedication and your fantastic outputs!
 
+## Example data preparation and analysis pipeline
+
+
 
 ## Code of conduct
 
