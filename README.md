@@ -10,6 +10,8 @@ Additional to the proprietary data provided by CDRC,subsets of tables originally
 
 nonUKborn.csv- Non UK born residents by LSOA and year (ONS)
 
+nonUK.rdata- Non UK born residents by LA and year (ONS)
+
 Please acknowledge these data providers if accessing these file for further analysis.
 
 View our submission here: https://github.com/RUMgroup/brexit_data_challenge/blob/master/RUM%20Brexit%20Submission%20Doc%2008032018.pdf
