@@ -27,6 +27,8 @@ Thank you to all participants for your dedication and your fantastic outputs!
 
 "Adding variables from other sources" script used to aggregate data table to LA level
 
+"Regression 10 year data" used to complete a simplified GLM regression
+
 
 ## Code of conduct
 
