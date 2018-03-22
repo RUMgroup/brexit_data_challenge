@@ -12,7 +12,9 @@ nonUKborn.csv- Non UK born residents by LSOA and year (ONS)
 
 nonUK.rdata- Non UK born residents by LA and year (ONS)
 
-Please acknowledge these data providers if accessing these file for further analysis.
+LSOA_LA_key.csv- Conversion key pairing LSOA and LA codes (ONS)
+
+Please acknowledge these data providers if accessing these files for further analysis.
 
 View our submission here: https://github.com/RUMgroup/brexit_data_challenge/blob/master/RUM%20Brexit%20Submission%20Doc%2008032018.pdf
 Thank you to all participants for your dedication and your fantastic outputs!
