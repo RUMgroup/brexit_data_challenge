@@ -6,13 +6,15 @@ This repository contains R and Python codes used in the analysis for the shortli
 
 Additional to the proprietary data provided by CDRC,subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk which were linked to the CDRC data are housed here for your convenience; 
 
-2016byage.csv- Mid 2016 population estimates by age and LSOA (ONS)
+2016byage.csv- Mid 2016 population estimates by gender, age in years and LSOA (ONS)
 
 nonUKborn.csv- Non UK born residents by LSOA and year (ONS)
 
 nonUK.rdata- Non UK born residents by LA and year (ONS)
 
 LSOA_LA_key.csv- Conversion key pairing LSOA and LA codes (ONS)
+
+PopDensity2016.csv- Population density 2016 by LSOA (ONS)
 
 Please acknowledge these data providers if accessing these files for further analysis.
 
