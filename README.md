@@ -2,7 +2,7 @@
 
 ## Info:
 
-This repository contains codes used in the analysis for the R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge introduced here: https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
+This repository contains codes used in the analysis for the shortlisted R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge (introduced here): https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
 
 Subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk which were linked to the CDRC data are housed here for your convenience; please acknowledge these data providers if accessing these file for further analysis.
 
