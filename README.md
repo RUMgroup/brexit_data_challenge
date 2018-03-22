@@ -23,7 +23,9 @@ Thank you to all participants for your dedication and your fantastic outputs!
 
 ## Example data preparation and analysis pipeline
 
-"Adding variables from other sources" script used to merge CDRC data with open source data derived tables
+"Ages.r" used to process ONS population estimate data to give LA level figures by age bands
+
+"Adding variables from other sources" script used to merge CDRC data with all open source data derived tables
 
 "Adding variables from other sources" script used to aggregate data table to LA level
 
