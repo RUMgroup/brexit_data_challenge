@@ -25,6 +25,8 @@ Thank you to all participants for your dedication and your fantastic outputs!
 
 "Ages.r" used to process ONS population estimate data to give LA level figures by age bands
 
+"data_join_notes.r" used to aggregate ethnicity data to the LA level to pair with voting data
+
 "Adding variables from other sources" script used to merge CDRC data with all open source data derived tables
 
 "Adding variables from other sources" script used to aggregate data table to LA level
