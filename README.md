@@ -18,7 +18,7 @@ Thank you to all participants for your dedication and your fantastic outputs!
 
 ## Code of conduct
 
-Our organisations adhere to the R Consortium and R Community Code of conduct
+Our organisations are vectors of the R consortium and adhere to the R Consortium and R Community Code of conduct
 
 ### R Community Code of Conduct
 A member of the R Community is:
