@@ -31,7 +31,7 @@ Thank you to all participants for your dedication and your fantastic outputs!
 
 "Regression 10 year data" used to complete a simplified GLM regression
 
-"brellenge_prep.py" used to compare time window choice via regression and heatmap comparison
+Compare time window choice via regression and heatmap comparison using "brellenge_prep.py" and with ANOVA using "check_bw_3_rates.R"
 
 
 ## Code of conduct
