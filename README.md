@@ -4,11 +4,12 @@
 
 This repository contains codes used in the analysis for the shortlisted R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge (introduced here): https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
 
-Subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk which were linked to the CDRC data are housed here for your convenience; 
+Additional to the proprietary data provided by CDRC,subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk which were linked to the CDRC data are housed here for your convenience; 
 
 2016byage.csv- Mid 2016 population estimates by age and LSOA (ONS)
+nonUKborn.csv- Non UK born residents by LSOA and year (ONS)
 
-please acknowledge these data providers if accessing these file for further analysis.
+Please acknowledge these data providers if accessing these file for further analysis.
 
 View our submission here: https://github.com/RUMgroup/brexit_data_challenge/blob/master/RUM%20Brexit%20Submission%20Doc%2008032018.pdf
 Thank you to all participants for your dedication and your fantastic outputs!
