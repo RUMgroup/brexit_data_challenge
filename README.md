@@ -35,6 +35,8 @@ Thank you to all participants for your dedication and your fantastic outputs!
 
 Compare time window choice via regression and heatmap comparison using "brellenge_prep.py" and with ANOVA using "check_bw_3_rates.R"
 
+Visualise voting by recent change in white british proportion of population using "line_plot.R"
+
 
 ## Code of conduct
 
