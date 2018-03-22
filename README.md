@@ -2,7 +2,7 @@
 
 ## Info:
 
-This repository contains R and Python codes used in the analysis for the shortlisted R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge (introduced here): https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018
+This repository contains R and Python codes used in the analysis for the shortlisted R Uni of Manchester & MMU R User Group submission to the CDRC GISRUK 2018 Brexit Data Challenge (introduced here): https://data.cdrc.ac.uk/dataset/gisruk-data-challenge-2018 and all other codes generated during the Brexit Data Challenge Hackathon.
 
 Additional to the proprietary data provided by CDRC,subsets of tables originally provided by Office of National Statistics (ONS) and www.gov.uk which were linked to the CDRC data are housed here for your convenience; 
 
@@ -36,6 +36,8 @@ Thank you to all participants for your dedication and your fantastic outputs!
 Compare time window choice via regression and heatmap comparison using "brellenge_prep.py" and with ANOVA using "check_bw_3_rates.R"
 
 Visualise voting by recent change in white british proportion of population using "line_plot.R"
+
+Map voting by geography using "mapping.R"
 
 
 ## Code of conduct
