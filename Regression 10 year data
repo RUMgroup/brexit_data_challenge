@@ -6,7 +6,6 @@ a<-read.csv("draft_ethnicity_brexit_10.csv")
 test10<-merge(a,all,all.x=TRUE)
 attach(test10)
 
-#WHEN WE DECIDE WHICH VARIABLES TO INCLUDE WE WILL UPDATE THE MODEL CODE
 RegModel.1 <- 
   lm(Pct_Leave.x~rate_nonUk+age_grp18_24+age_grp25_34+age_grp35_44+age_grp45_54+age_grp55_64+
   age_grp65_over+Area.Sq.Km+ Mid.2016.Population+Pct_Turnout.x+Rejected_Ballots+
