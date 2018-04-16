@@ -34,8 +34,16 @@ ggplotly(ggplot(data = wb_ethnicity_brexit, aes(x=year, y=value, group = LAD16CD
   ylab("Proportion of LA white British") +
   xlab("Year"))
 
+#Plot proportion of White British residents over time 
 ggplot(data = wb_ethnicity_brexit, aes(x=year, y=value, group = LAD16CD)) + geom_line(aes(color = Pct_Leave)) +
   theme_cowplot() +
   scale_colour_gradientn(colours = terrain.colors(10)) +
   labs(x = "Year" , y = "Proportion of LA white British", colour = "Percent \nvoting leave")
+
+#Plot proportion of ethnic minority residents over time 
+ggplot(data = wb_ethnicity_brexit, aes(x=year, y=1-value, group = LAD16CD)) + geom_line(aes(color = Pct_Leave)) +
+  theme_cowplot() +
+  scale_colour_gradientn(colours = terrain.colors(10)) +
+  labs(x = "Year" , y = "Proportion of population with minority ethnicity", colour = "Percent \nvoting leave")
+
 
