@@ -18,7 +18,6 @@ finite.differences <- function(x, y) {
   return(fdx)
 }
 
-
 wb_ethnicity_brexit$central_finite_diff <- finite.differences(wb_ethnicity_brexit$year, wb_ethnicity_brexit$value)
 
 wb_ethnicity_brexit$central_finite_diff <- ifelse(wb_ethnicity_brexit$central_finite_diff==Inf, 0, wb_ethnicity_brexit$central_finite_diff)
