@@ -33,7 +33,7 @@ Calculate migration rates using "migration.r"
 
 "Adding variables from other sources" script used to aggregate data table to LA level
 
-"Regression 10 year data" used to complete a simplified GLM regression
+"Updated regression 10 year data" used to complete and simplify a regression
 
 Compare time window choice via regression and heatmap comparison using "brellenge_prep.py" and with ANOVA using "check_bw_3_rates.R"
 
