@@ -1,1 +1,39 @@
 
+load("Brexit10Covariates.rda")
+
+# if using scaled covariates:  tenall<-scale(tenall[,c(2:26,28:36)])
+
+tenall<-as.data.frame(tenall)
+attach(tenall)
+RegModel.5<-lm(formula = Pct_Leave.y ~ age_grp18_24 + age_grp25_34 + age_grp35_44 + 
+    age_grp55_64 + age_grp65_over + 
+    Asian + Black + Mid.2016.Population + Other + Pct_Turnout.y + People.per.Sq.Km + 
+    Rejected_Ballots + 
+    White.British + White.Other, data = tenall)
+
+drop1(RegModel.5, test="F")
+
+RegModel.6<-update(RegModel.5,~.-Other)
+anova(RegModel.5,RegModel.6,test="Chi") #P=0.4732
+
+RegModel.7<-update(RegModel.6,~.-Asian)#P=0.3213
+anova(RegModel.6,RegModel.7,test="Chi") 
+
+drop1(RegModel.7, test="F")
+
+RegModel.8<-update(RegModel.7,~.-White.British)
+anova(RegModel.7,RegModel.8,test="Chi") #P=0.39
+
+drop1(RegModel.8, test="F")
+
+RegModel.9<-update(RegModel.8,~.-Mid.2016.Population)
+anova(RegModel.8,RegModel.9,test="Chi") #P=0.392
+
+drop1(RegModel.9, test="F")
+summary(RegModel.9)
+
+library(sjPlot)
+set_theme(base = theme_bw(),axis.textsize = 1.1, geom_vline(0, 2, “gray42”, 1))
+sjp.lm(RegModel.9, breakLabelsAt = 30)
+
+#If the sjPlot loading fails, make sure you install all dependencies flagged in the error messages then retry loading the library
