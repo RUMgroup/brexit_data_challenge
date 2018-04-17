@@ -10,7 +10,6 @@ RegModel.5<-lm(formula = Pct_Leave.y ~ age_grp18_24 + age_grp25_34 + age_grp35_4
     Asian + Black + Mid.2016.Population + Other + Pct_Turnout.y + People.per.Sq.Km + 
     Rejected_Ballots + 
     White.British + White.Other, data = tenall)
-
 drop1(RegModel.5, test="F")
 
 RegModel.6<-update(RegModel.5,~.-Other)
